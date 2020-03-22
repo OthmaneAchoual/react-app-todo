@@ -1,26 +1,26 @@
-import React from 'react';
+import React, { Component, Fragment } from 'react';
+import TodoList from './TodoList';
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const todos = [
+    { title: "Todo 1", body: "Task To do 1"},
+    { title: "Todo 2", body: "Task To do 2"},
+    { title: "Todo 3", body: "Task To do 3"}
+];
+
+class App extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+    render() {
+    return (
+        <Fragment>
+            <TodoList todos={todos} />
+        </Fragment>
+    );
+  }
 }
 
 export default App;
